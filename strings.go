@@ -2,7 +2,7 @@ package myutils
 
 import "github.com/valyala/bytebufferpool"
 
-// Concat two strings
+// Concat some strings
 func Concat(a string, b ...string) string {
 	if len(b) == 0 {
 		return a
