@@ -15,5 +15,5 @@ func Concat(a string, b ...string) string {
 		buf.WriteString(s)
 	}
 
-	return string(buf.B[:])
+	return string(buf.B)
 }
