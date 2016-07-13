@@ -16,17 +16,16 @@ func StrCrop(str string, length int) string {
 
 	var (
 		lastStop int
-		res      string
+		runeStr  = []rune(str)
 	)
-	for i, c := range str {
-		if cropRgx.MatchString(string(c)) {
-			lastStop = i - 1
+	for i, r := range runeStr {
+		if cropRgx.MatchString(string(r)) {
+			lastStop = i
 		}
 		if i >= length {
-			res = str[:lastStop]
-			break
+			return string(runeStr[:lastStop])
 		}
 	}
 
-	return res
+	return str
 }
